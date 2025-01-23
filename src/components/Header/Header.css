@@ -1,6 +1,6 @@
 
 .header {
-    margin: 0px auto;
+    margin: 80px auto;
     background-size: contain;
     max-width: 1180px;
     width: 100vw;
@@ -13,24 +13,19 @@
     display: flex;             
 }
 
-.header-content .color-1 {
-    display: inline;
-    font-size: 7vw;
-    color: #000000;
+.header-content .text-initial{
+    font-family: "Open Sans", serif;
+    font-size: 29px;
+    font-weight: bold;
 }
 
-.header-content .color-2{
-    display: inline ;
-    font-size: 7vw;
-    color: #ff2525;
-}
-
-.header-content .text .text-initial{
-    font-size: 42px;
+.header-content .header-logo{
+    width: 22vw;
+    height: auto;
 }
 
 .header-img {
-    width: 30vw;
+    width: 25vw;
     height: auto;
 }
 
@@ -39,11 +34,12 @@
     padding: 1.2vw 1.4vw;
     display: block;
     border-radius: 8px;
-    background-color: #00dea5;
+    background-color: #38D430;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     border-style: none;
     font-weight: bold;
     cursor: pointer;
+    margin-top: 35px;
 }
 
 @media (max-width: 860px) {
@@ -62,7 +58,7 @@
         width: 40vw;
         height: auto;
     }
-    .header-content .text .text-initial{
+    .header-content .header-start.text-initial{
         font-size:  30px;
     }
     .header .button-register{
@@ -86,7 +82,7 @@
         width: 40vw;
         height: auto;
     }
-    .header-content .text .text-initial{
+    .header-content .header-start .text-initial{
         font-size:  28px;
     }
     .header .button-register{
@@ -110,7 +106,7 @@
         width: 40vw;
         height: auto;
     }
-    .header-content .text .text-initial{
+    .header-content .header-start .text-initial{
         font-size: 18px;
     }
     .header .button-register{
@@ -130,7 +126,7 @@
     .header-content .color-2{
         font-size: 48px;
     }
-    .header-content .text .text-initial{
+    .header-content .header-start .text-initial{
         font-size: 15px;
     }
     .header-img {
@@ -152,7 +148,7 @@
     .header-content .color-2{
         font-size: 50px;
     }
-    .header-content .text .text-initial{
+    .header-content .header-start .text-initial{
         font-size: 16px;
     }
     .header .button-register{
