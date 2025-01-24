@@ -11,7 +11,7 @@ const Description = () => {
           <p> acontecem</p>
         </h2>
         <h6 className='description-2'>
-          <p>O StartUFC é um programa de incentivo ao empreendedorismo,</p>
+          {/* <p>O StartUFC é um programa de incentivo ao empreendedorismo,</p>
           <p>criado como um projeto de extensão em 2020 por</p>
           <p>Matheus Sampaio, estudante de Sistemas de Informação.</p>
           <p> Seu objetivo é promover a mentalidade empreendedora</p>
@@ -19,7 +19,18 @@ const Description = () => {
           <p>os discentes a se engajarem de forma produtiva e colaborativa.</p>
           <p>O programa é coordenado por Arnaldo Barreto e Lilian Carneiro,</p>
           <p>com a subcoordenação de Frankecion Bernardino (StartUFC) e</p>
-          <p>Luanderson da Silva (Germinar).</p>
+          <p>Luanderson da Silva (Germinar).</p> */}
+          <p>
+            O StartUFC é um programa de incentivo ao empreendedorismo,
+            criado como um projeto de extensão em 2020 por
+            Matheus Sampaio, estudante de Sistemas de Informação.
+            Seu objetivo é promover a mentalidade empreendedora
+            tanto dentro quanto fora da Universidade, encorajando
+            os discentes a se engajarem de forma produtiva e colaborativa.
+            O programa é coordenado por Arnaldo Barreto e Lilian Carneiro,
+            com a subcoordenação de Frankecion Bernardino (StartUFC) e
+            Luanderson da Silva (Germinar).
+          </p>
         </h6>
       </div>
     </div>
