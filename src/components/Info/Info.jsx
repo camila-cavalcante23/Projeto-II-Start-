@@ -22,10 +22,12 @@ const Info = () => {
           <Link to="/" className='grid-text'>Cadastre sua Startup</Link>
           <SlArrowRightCircle />
         </div>
-        <div className='box box5'>
-          <Link to="/" className='grid-text'>Eventos</Link>
-          <SlArrowRightCircle />
+       
+        <div className="box box5">
+          <Link to="/" className="grid-text">Eventos</Link>
+         <SlArrowRightCircle />
         </div>
+
         <div className='box box6'>
           <Link to="/" className='grid-text'>Apoiadores</Link>
           <SlArrowRightCircle />

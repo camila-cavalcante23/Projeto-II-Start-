@@ -1,0 +1,17 @@
+.News {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .News-us {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .News-content {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
+  }
+  

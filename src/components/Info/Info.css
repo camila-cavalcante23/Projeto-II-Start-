@@ -56,49 +56,69 @@
   }
 }
 
+@media (max-width: 760px) {
+  .box5 {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
 .box1 {
   align-items: center;
   background-image: url('../../assets/StartUFC-logo.png');
   background-size: 18vw;
   background-repeat: no-repeat;
   background-position: center center;
+  
 }
 
 .box2 {
   background-color: #38D430;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  
+
 }
 
 .box3 {
   background-color: #001D3D;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   color: #38D430;
+
 }
 
 .box4 {
   background-color: #38D430;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
 }
+
 
 .box5 {
   background-color: #001D3D;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   color: #38D430;
+  border: 1px solid black;
+  
+
 }
 
 .box6 {
   background-color: #969696;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+ 
 }
 
 .box7 {
   background-color: #38D430;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+ 
 }
 
 .box8 {
   background-color: #969696;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+ 
 }
 
 .grid-container .box .grid-text{
