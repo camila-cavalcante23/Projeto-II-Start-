@@ -1,17 +1,73 @@
 .News {
-    padding: 20px;
-    background-color: #f9f9f9;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.News-us {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.News-content {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #666;
+}
+
+.img1, .img2, .img3 {
+  margin-top: 4%;
+  width: 23vw;  /* Tamanho uniforme para todas as imagens */
+  height: 200px;  /* Definir uma altura fixa para todas as imagens */
+  object-fit: cover;  /* Faz as imagens se ajustarem ao tamanho sem distorção */
+  margin-left: -1vw;  /* Move as imagens para a esquerda */
+}
+
+.News-content {}
+
+.tudo {
+ 
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 190px);
+  gap: 8vw;
+  padding: 6vw;
+  width: 3vw;
+  height: auto;
+}
+
+.tudo div {
+  display: block; 
+  justify-content: center;
+  font-size: 1.5vw;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  padding: 3px;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+@media (max-width: 500px) {
+  .img1, .img2, .img3 {
+      width: 20vw;  /* Tamanho uniforme para todas as imagens */
+      height: 200px;  /* Definir uma altura fixa para todas as imagens */
+      margin-left: -5vw;  /* Move as imagens para a esquerda */
   }
-  
-  .News-us {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
+}
+
+@media (max-width: 415px) {
+  .img1, .img2, .img3 {
+      width: 20vw;  /* Tamanho uniforme para todas as imagens */
+      height: 200px;  /* Definir uma altura fixa para todas as imagens */
+      margin-left: -5vw;  /* Move as imagens para a esquerda */
   }
-  
-  .News-content {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #666;
+}
+
+@media (max-width: 391px) {
+  .img1, .img2, .img3 {
+      width: 20vw;  /* Tamanho uniforme para todas as imagens */
+      height: 200px;  /* Definir uma altura fixa para todas as imagens */
+      margin-left: -5vw;  /* Move as imagens para a esquerda */
   }
-  
+}
