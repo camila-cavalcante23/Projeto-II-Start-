@@ -6,6 +6,10 @@ import Home from "./pages/Home/Home.jsx"
 import QuemSomos from "./pages/QuemSomos/QuemSomos.jsx"
 import Noticias from "./pages/Noticias/Noticias.jsx"
 import Germinar from "./pages/Germinar/Germinar.jsx"
+import Apoiadores from "./pages/apoiadores/apoiadores.jsx"
+import RedesSociais from './pages/RedesSociais/RedesSociais.jsx'
+
+
 
 const router = createBrowserRouter([
   {
@@ -27,6 +31,14 @@ const router = createBrowserRouter([
       {
         path: "germinar",
         element: <Germinar/>,
+      },
+      {
+        path: "apoiadores",
+        element: <Apoiadores/>,
+      },
+      {
+      path: "RedesSociais",
+      element: <RedesSociais/>,
       }
     ]
   },

@@ -1,21 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-* {
+*{
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    max-width: 100vw; /* Garante que nenhum elemento ultrapasse a largura da tela */
+
+
 }
 
-body {
-    min-height: 100vh; /* Ocupa toda a altura da tela */
-    width: 100vw; /* Ocupa toda a largura da tela */
-    overflow-x: hidden; /* Remove rolagem horizontal */
+body{
+    min-height: 200px;
     position: relative;
     background: rgba(242, 238, 238, 0.5);
 }
 
-body::before {
+body::before{
     position: absolute;
     content: "";
     width: 100%;
@@ -23,3 +21,25 @@ body::before {
     background: rgba(242, 238, 238, 0.5);
     z-index: -1;
 }
+
+.titulo-parceiros {
+    margin-top: 3%;
+    font-family: "Gabarito", serif;
+    font-size: 2.5vw;
+    font-weight: 500;
+}
+
+.geralparceiros{
+    margin: 0px auto;
+    padding: 50px;
+    max-width: 100%;
+    width: 100vw;
+
+}
+
+
+
+
+
+
+ 

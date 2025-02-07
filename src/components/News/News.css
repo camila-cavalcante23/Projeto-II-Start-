@@ -1,6 +1,7 @@
 .News {
   padding: 20px;
-  background-color: #f9f9f9;
+  color: white;
+ 
 }
 
 .News-us {
@@ -20,7 +21,7 @@
   width: 23vw;  /* Tamanho uniforme para todas as imagens */
   height: 200px;  /* Definir uma altura fixa para todas as imagens */
   object-fit: cover;  /* Faz as imagens se ajustarem ao tamanho sem distorção */
-  margin-left: -1vw;  /* Move as imagens para a esquerda */
+  margin-left: -2vw;  /* Move as imagens para a esquerda */
 }
 
 .News-content {}
@@ -52,7 +53,7 @@
   .img1, .img2, .img3 {
       width: 20vw;  /* Tamanho uniforme para todas as imagens */
       height: 200px;  /* Definir uma altura fixa para todas as imagens */
-      margin-left: -5vw;  /* Move as imagens para a esquerda */
+      margin-left: -5vw;  
   }
 }
 
@@ -60,7 +61,7 @@
   .img1, .img2, .img3 {
       width: 20vw;  /* Tamanho uniforme para todas as imagens */
       height: 200px;  /* Definir uma altura fixa para todas as imagens */
-      margin-left: -5vw;  /* Move as imagens para a esquerda */
+      margin-left: -5vw;  
   }
 }
 
@@ -68,6 +69,6 @@
   .img1, .img2, .img3 {
       width: 20vw;  /* Tamanho uniforme para todas as imagens */
       height: 200px;  /* Definir uma altura fixa para todas as imagens */
-      margin-left: -5vw;  /* Move as imagens para a esquerda */
+      margin-left: -5vw;  
   }
 }

@@ -1,0 +1,23 @@
+.nav2 {
+    background: rgba(242, 238, 238, 0.5);
+    padding: 0.3rem 0;
+}
+
+.navbar2{
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+a {
+    text-decoration: none;
+    padding: 5px;
+}
+
+img {
+    width: 20px; /* Ajuste o tamanho conforme necessário */
+}

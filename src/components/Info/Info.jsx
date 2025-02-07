@@ -29,11 +29,11 @@ const Info = () => {
         </div>
 
         <div className='box box6'>
-          <Link to="/" className='grid-text'>Apoiadores</Link>
+        <Link to="/Apoiadores" className="grid-text">Apoiadores</Link>
           <SlArrowRightCircle />
         </div>
         <div className='box box7'>
-          <Link to="/" className='grid-text'>Redes Sociais</Link>
+          <Link to="/RedesSociais" className='grid-text'>Redes Sociais</Link>
           <SlArrowRightCircle />
         </div>
         <div className='box box8'>

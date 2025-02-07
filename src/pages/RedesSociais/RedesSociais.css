@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+
+
+}
+
+body{
+    min-height: 200px;
+    position: relative;
+    background: rgba(242, 238, 238, 0.5);
+}
+
+body::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(242, 238, 238, 0.5);
+    z-index: -1;
+}
+
+.tituloRedes {
+    margin-top: 3%;
+    font-family: "Gabarito", serif;
+   margin-left: 110px;
+    font-weight: 500;
+    width: 560px;
+    height: 138px;
+    color: #002A3A;
+    font-size: 35px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.imagensRedes {
+    display: flex;
+    gap: 20px;
+}
+
+
+.icon-container {
+    position: relative;
+    width: 55px; 
+    height: 50px;
+    display: flex;
+    align-items:center;
+    top: -60px;
+    left: 200px;
+    justify-content: center;
+}
+
+.imagensRedes img {
+    width: 60px;
+    height: auto;
+}
+
+.Logo{
+    position: relative;
+    top:-30px;
+    left: 155px;
+    justify-content: center;
+    display: flex;
+    margin-top: 100;
+    width: 300px;
+    height: auto;
+    margin-bottom: 80px 
+
+}
+
+.maoC {
+    width: 490px ;  
+    height: 900px;
+    position: relative;
+    left: 747px;
+    top: 32px;
+  }
+  
+
+.tudoR{
+    padding-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .tituloRedes {
+        font-size: 28px;
+        text-align: center;
+        margin-left: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .imagensRedes {
+       height: 260px;
+       left: 50%;
+       align-items: center;
+       margin-left: -90px;
+    }
+
+    .maoC {
+        margin-top: 118px;
+        left: 64%;
+        align-items: center;
+        width:260px;
+        margin-left: 30px;
+        margin-bottom: 90px;
+    }
+
+    .Logo {
+        top: 90px; /* Ajuste a posição vertical */
+        left: 20%; 
+        width: 15px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .tituloRedes {
+        font-size: 24px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .icon-container {
+        width: 45px;
+        height: 45px;
+    }
+
+    .Logo {
+        top: 90px; /* Ajuste a posição vertical */
+        left: 20%; 
+        width: 15px;
+    }
+}
