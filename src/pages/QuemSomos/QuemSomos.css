@@ -28,18 +28,13 @@
 }
 
 .text-about-1 p{
-    font-size: 1.8vw;
+    margin-top: 1%;
+    font-size: 1.5vw;
     font-weight: normal;
-}
-
-.text-about-2 {
-    margin-top: 2%;
     font-family: "Open Sans", serif;
-    font-size: 1.8vw;
-    font-weight: normal;
 }
 
-.supporters{
+p.supporters{
     font-weight: bolder;
 }
 
@@ -57,9 +52,6 @@
         height: auto;
     }
     .text-about-1 p{
-        font-size: 14px;
-    }
-    .text-about-2 p{
         font-size: 14px;
     }
 }
@@ -80,9 +72,7 @@
     .text-about-1 p{
         font-size: 14px;
     }
-    .text-about-2 p{
-        font-size: 14px;
-    }
+    
 }
 
 @media (max-width: 391px) {
@@ -99,9 +89,6 @@
         height: auto;
     }
     .text-about-1 p{
-        font-size: 12px;
-    }
-    .text-about-2 p{
         font-size: 12px;
     }
 }

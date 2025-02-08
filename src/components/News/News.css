@@ -1,13 +1,26 @@
 .News {
   padding: 20px;
-  color: white;
- 
+  margin: 0px auto;
+  padding: 20px;
+  max-width: 1480px;
+  width: 100vw;
 }
 
-.News-us {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
+.News .button-news{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 45px;
+}
+
+.News button{
+  padding: 0.4rem 3rem !important;
+  font-weight: 500;
+}
+
+.News-title {
+  font-family: "Gabarito", serif;
+  font-weight: 500;
+  font-size: 2.5vw;
 }
 
 .News-content {
@@ -18,21 +31,19 @@
 
 .img1, .img2, .img3 {
   margin-top: 4%;
-  width: 23vw;  /* Tamanho uniforme para todas as imagens */
-  height: 200px;  /* Definir uma altura fixa para todas as imagens */
-  object-fit: cover;  /* Faz as imagens se ajustarem ao tamanho sem distorção */
-  margin-left: -2vw;  /* Move as imagens para a esquerda */
+  width: 23vw;  
+  height: 200px;  
+  object-fit: cover; 
 }
 
-.News-content {}
-
 .tudo {
- 
   display: grid;
+  margin-top: 2%;
+  font-size: 26px;
+  font-weight: normal;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 190px);
   gap: 8vw;
-  padding: 6vw;
   width: 3vw;
   height: auto;
 }
@@ -51,24 +62,24 @@
 
 @media (max-width: 500px) {
   .img1, .img2, .img3 {
-      width: 20vw;  /* Tamanho uniforme para todas as imagens */
-      height: 200px;  /* Definir uma altura fixa para todas as imagens */
+      width: 20vw;  
+      height: 200px; 
       margin-left: -5vw;  
   }
 }
 
 @media (max-width: 415px) {
   .img1, .img2, .img3 {
-      width: 20vw;  /* Tamanho uniforme para todas as imagens */
-      height: 200px;  /* Definir uma altura fixa para todas as imagens */
+      width: 20vw; 
+      height: 200px;  
       margin-left: -5vw;  
   }
 }
 
 @media (max-width: 391px) {
   .img1, .img2, .img3 {
-      width: 20vw;  /* Tamanho uniforme para todas as imagens */
-      height: 200px;  /* Definir uma altura fixa para todas as imagens */
+      width: 20vw;  
+      height: 200px; 
       margin-left: -5vw;  
   }
 }

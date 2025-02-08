@@ -9,7 +9,7 @@
 
 .header-content {
     align-items: center;
-    gap: 8rem;
+    gap: 9.5rem;
     display: flex;             
 }
 
@@ -22,6 +22,7 @@
 .header-content .header-logo{
     width: 22vw;
     height: auto;
+    margin-bottom: 5%;
 }
 
 .header-img {
@@ -29,16 +30,9 @@
     height: auto;
 }
 
-.header .button-register{
-    font-size: 1.4vw;
+.header button{
+    font-size: 1.5vw;
     padding: 1.2vw 1.4vw;
-    display: block;
-    border-radius: 8px;
-    background-color: #38D430;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    border-style: none;
-    font-weight: bold;
-    cursor: pointer;
     margin-top: 35px;
 }
 

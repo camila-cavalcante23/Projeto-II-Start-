@@ -17,10 +17,10 @@ nav {
 a {
     text-decoration: none;
     padding: 5px;
+    cursor: pointer;
 }
 
 .navbar .navbar-logo{
-    cursor: pointer;
     width: 95px;
 }
 
@@ -36,6 +36,11 @@ a {
     margin: 0 0.5rem;
 }
 
+.navbar .nav-link button{
+    margin-left: 5rem;
+    padding: 0.5rem 3rem;
+}
+
 .navbar .nav-link li a {
     color: #000000;
     font-size: 1.3rem;
@@ -46,19 +51,6 @@ a {
 .navbar .nav-link li a:hover {
     background-color: #efefef;
     border-radius: 10px;
-}
-
-.navbar .button-login{
-    font-family: "Gabarito", serif;
-    font-size: 1.2rem;
-    padding: 0.5rem 3rem;
-    display: block;
-    border-radius: 8px;
-    background-color: #38D430;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    border-style: none;
-    font-weight: bold;
-    cursor: pointer;
 }
 
 .menu {
