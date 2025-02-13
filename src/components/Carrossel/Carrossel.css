@@ -18,7 +18,7 @@
   object-fit: cover; /* Garante que as imagens sejam cortadas para preencher o espaço sem distorção */
 }
 
-botao {
+.prev {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -28,13 +28,19 @@ botao {
   padding: 10px;
   cursor: pointer;
   font-size: 18px;
-  
-}
-.prev {
   left:6px;
 }
 
 .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background:rgb(255, 255, 255);
+  color: rgba(0, 42, 58, 1);
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
   right: -202px;
 }
 

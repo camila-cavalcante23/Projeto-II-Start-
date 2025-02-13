@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from "./pages/Home/Home.jsx"
 import QuemSomos from "./pages/QuemSomos/QuemSomos.jsx"
 import Noticias from "./pages/Noticias/Noticias.jsx"
-import Germinar from "./pages/Germinar/GerminarPage.jsx"
+import GerminarPage from "./pages/Germinar/GerminarPage.jsx";
 import Apoiadores from "./pages/Apoiadores/Apoiadores.jsx"
 import RedesSociais from './pages/RedesSociais/RedesSociais.jsx'
 import Galeria from './pages/Galeria/Galeria.jsx'
@@ -31,20 +31,20 @@ const router = createBrowserRouter([
         element: <Noticias/>,
       },
       {
-       path: "GerminarPage",
-       element: <Germinar/>
+        path: "germinar-page",
+        element: <GerminarPage />
       },
-
+      
       {
         path: "apoiadores",
         element: <Apoiadores/>,
       },
       {
-      path: "RedesSociais",
+      path: "redesSociais",
       element: <RedesSociais/>,
       },
       {
-      path: "Galeria",
+      path: "galeria",
       element: <Galeria/>,
       },
       {

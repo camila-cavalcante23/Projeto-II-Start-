@@ -2,7 +2,6 @@
 import './Germinar.css'
 import Img from '../../assets/foto1Start.png'
 import Button from '../../components/Button/Button'
-import Navbar2 from '../../components/Navbar2/Navbar2';
 import React, { useState } from 'react';
 
 const Germinar = () => {

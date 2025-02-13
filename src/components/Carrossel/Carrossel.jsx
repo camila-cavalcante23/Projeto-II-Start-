@@ -22,7 +22,7 @@ const Carrossel = ({ imagens }) => {
 
     return (
         <div className="carrossel-container">
-            <botao className="prev" onClick={prevImage}>←</botao>
+            <button className="prev" onClick={prevImage}>←</button>
             <div className="carrossel-imagens">
                 {currentImages.map((img, index) => (
                     <img
@@ -33,7 +33,7 @@ const Carrossel = ({ imagens }) => {
                     />
                 ))}
             </div>
-            <botao className="next" onClick={nextImage}>→</botao>
+            <button className="next" onClick={nextImage}>→</button>
         </div>
     );
 };

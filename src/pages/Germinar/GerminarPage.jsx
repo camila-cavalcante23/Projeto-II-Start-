@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 const GerminarPage = () => {
 
   return (
-    <section className='germinar' id='germinar-id'>
+    <section className='germinarPage' id='germinar-id'>
        <Navbar2/>
       <h1 className='title-g'>Germinar</h1>
         <div className='germinar-content'>
