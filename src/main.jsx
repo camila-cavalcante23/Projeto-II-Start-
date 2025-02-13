@@ -9,6 +9,7 @@ import Germinar from "./pages/Germinar/GerminarPage.jsx"
 import Apoiadores from "./pages/Apoiadores/Apoiadores.jsx"
 import RedesSociais from './pages/RedesSociais/RedesSociais.jsx'
 import Galeria from './pages/Galeria/Galeria.jsx'
+import NewsForm from './admin/NewsForm/NewsForm.jsx'
 
 
 
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
       path: "Galeria",
       element: <Galeria/>,
+      },
+      {
+        path: "news-form",
+        element: <NewsForm/>
       }
 
     ]
