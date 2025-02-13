@@ -1,21 +1,14 @@
 
 import './Germinar.css'
 import Img from '../../assets/foto1Start.png'
-import Button from '../../components/Button/Button'
 import Navbar2 from '../../components/Navbar2/Navbar2';
 import React, { useState } from 'react';
 
-const Germinar = () => {
-
-  const [isDisabled, setIsDisabled] = useState(false);
-  const handleClick = () => {
-    alert('Botão clicado!');
-  };
-
+const GerminarPage = () => {
 
   return (
     <section className='germinar' id='germinar-id'>
-   
+       <Navbar2/>
       <h1 className='title-g'>Germinar</h1>
         <div className='germinar-content'>
 
@@ -27,11 +20,10 @@ const Germinar = () => {
             <img src={Img} alt="" className='img-g'/>
           </div>
           <div className='btn-right'>
-            <Button text="Ir para Germinar" onClick={handleClick} color="green" />
           </div>
         </div>
     </section>
   )
 }
 
-export default Germinar
+export default GerminarPage

@@ -11,11 +11,11 @@ const Info = () => {
           <Link to="/" className='grid-text'></Link>
         </div>
         <div className='box box2'>
-          <Link to="/germinar" className='grid-text'>Germinar</Link>
+          <Link to="/Germinar" className='grid-text'>Germinar</Link>
           <SlArrowRightCircle />
         </div>
         <div className='box box3'>
-          <Link to="/" className='grid-text'>Fotos</Link>
+          <Link to="/Galeria" className='grid-text'>Galeria</Link>
             <SlArrowRightCircle />
         </div>
         <div className='box box4'>
