@@ -41,7 +41,11 @@ const handleClick = () => {
                     </li>
 
                     {/* <button type="button" className='button-login'>Login</button> */}
-                    <Button text="Login" onClick={handleClick} color="green" />
+                    <Link 
+                       to="/login"><Button text="Login" color="green" />
+                    </Link>
+                    
+                    
                 </ul>
                 
                 <button className="menu" onClick={toggleMenu}>
