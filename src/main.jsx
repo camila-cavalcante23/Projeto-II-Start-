@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from "./pages/Home/Home.jsx"
 import QuemSomos from "./pages/QuemSomos/QuemSomos.jsx"
 import Noticias from "./pages/Noticias/Noticias.jsx"
-import GerminarPage from "./pages/Germinar/GerminarPage.jsx";
+import GerminarPage from "./pages/Germinar/GerminarPage.jsx"
 import Apoiadores from "./pages/Apoiadores/Apoiadores.jsx"
 import RedesSociais from './pages/RedesSociais/RedesSociais.jsx'
 import Galeria from './pages/Galeria/Galeria.jsx'
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
         path: "login",
         element: <Login/>
       }
-
+      
     ]
   },
 ])

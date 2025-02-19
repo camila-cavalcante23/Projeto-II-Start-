@@ -18,6 +18,30 @@ a {
     padding: 5px;
 }
 
-img {
-    width: 20px; /* Ajuste o tamanho conforme necessário */
-}
+
+@media (max-width: 1024px) {
+    .titulo-parceiros{
+      font-size: 17px;
+     
+    }
+  
+  }
+  
+  /* Media query para telas menores que 768px (Celulares em modo paisagem e tablets pequenos) */
+  @media (max-width: 768px) {
+    .titulo-parceiros {
+      font-size: 17px;
+
+    }
+  
+   
+  }
+  
+  /* Media query para telas menores que 480px (Celulares) */
+  @media (max-width: 480px) {
+    .titulo-parceiros{
+      font-size: 17px;
+      
+    }
+  }
+  
