@@ -3,12 +3,14 @@ import './NewsForm.css'
 import Navbar2 from '../../components/Navbar2/Navbar2';
 import { IoImagesOutline } from "react-icons/io5";
 import Button from '../../components/Button/Button'
-// import axios from 'axios';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function NewsForm() {
   const [titulo, setTitulo] = useState('');
   const [conteudo, setConteudo] = useState('');
   const [imagem, setImagem] = useState(null);
+  const navigate = useNavigate();
 
   const handleClick = () => {
     alert('Botão clicado!');
@@ -26,7 +28,12 @@ function NewsForm() {
       const resposta = await axios.post('http://localhost:5000/api/news', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
+
       alert('Notícia criada com sucesso!');
+
+      const noticiaId = resposta.data.id;
+      navigate(`/noticia/${noticiaId}`);
+
     } catch (error) {
       console.error('Erro ao criar a notícia', error);
       alert('Erro ao criar a notícia');
@@ -40,7 +47,6 @@ function NewsForm() {
         <h2>Criar Notícia</h2>
         <form onSubmit={enviarNoticia}>
           <div className='input-title'>
-            {/* <label>Título:</label> */}
             <input
               type="text"
               value={titulo}
@@ -50,7 +56,6 @@ function NewsForm() {
             />
           </div>
           <div className='textarea-content'>
-            {/* <label>Conteúdo:</label> */}
             <textarea
               value={conteudo}
               onChange={(e) => setConteudo(e.target.value)}

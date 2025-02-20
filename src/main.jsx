@@ -11,6 +11,7 @@ import RedesSociais from './pages/RedesSociais/RedesSociais.jsx'
 import Galeria from './pages/Galeria/Galeria.jsx'
 import NewsForm from './admin/NewsForm/NewsForm.jsx'
 import Login from './pages/Login/Login.jsx'
+import NewsDetail from './pages/NewsDetail/NewsDetail.jsx'
 
 const router = createBrowserRouter([
   {
@@ -50,11 +51,14 @@ const router = createBrowserRouter([
         path: "news-form",
         element: <NewsForm/>
       },
-        {
+      {
         path: "login",
         element: <Login/>
+      },
+      {
+        path: "noticia/:id",
+        element: <NewsDetail/>
       }
-      
     ]
   },
 ])

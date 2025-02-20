@@ -37,7 +37,7 @@
     padding-right: 20px;
   }
   
-  input {
+  .login_info input {
     height: 35px;
     outline: none;
     border: none;

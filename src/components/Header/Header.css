@@ -110,9 +110,14 @@
 }
 
 @media (max-width: 415px) {
+    .header{
+        margin: 20px 0px;
+    }
     .header-content {
+        display: flex;
         gap: 2rem;  
-        align-items: center;         
+        align-items: flex-start; 
+        flex-direction: column;        
     }
     .header-content .color-1{
         font-size: 48px;
@@ -123,12 +128,17 @@
     .header-content .header-start .text-initial{
         font-size: 15px;
     }
+    .header-content .header-logo{
+        width: 10rem;
+        height: auto;
+    }
     .header-img {
         width: 38vw;
         height: auto;
     }
-    .header .button-register{
-        margin-top: 10px;
+    .header .btn.green{
+        margin-top: 20px;
+        font-size: 10px;
     }
 }
 
