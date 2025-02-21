@@ -19,15 +19,6 @@ const toggleMenu = () => setIsOpen(!isOpen)
                 <Link to="/">
                     <img src={seta} alt="" className='navbar2-seta'/>
                 </Link>
-            
-                <ul className={isOpen ? "nav-link active" : "nav-link"}>
-                    
-                </ul>
-                
-                <button className="menu" onClick={toggleMenu}>
-                    {isOpen ? <FaTimes/> : <FaBars/>}
-                </button>
-
             </div>
         </nav>
     </>

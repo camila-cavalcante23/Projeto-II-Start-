@@ -14,6 +14,7 @@ import Login from './pages/Login/Login.jsx'
 import Eventos from './pages/Eventos/Eventos.jsx'
 import DetalhesEvento from "./pages/Eventos/DetalhesEvento.jsx";
 import Inscricao from './admin/inscricaoEvento/inscricao.jsx';
+import NewsDetail from './pages/NewsDetail/NewsDetail.jsx'
 
 const router = createBrowserRouter([
   {
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
         path: "news-form",
         element: <NewsForm/>
       },
-        {
+      {
         path: "login",
         element: <Login/>
       },
@@ -72,6 +73,11 @@ const router = createBrowserRouter([
       }
 
           
+      },
+      {
+        path: "noticia/:id",
+        element: <NewsDetail/>
+      }
     ]
   },
 ])
