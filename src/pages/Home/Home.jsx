@@ -9,6 +9,7 @@ import Navbar from '../../components/Navbar/Navbar'
 import Germinar from '../Germinar/Germinar'
 import QuemSomos from '../QuemSomos/QuemSomos'
 
+
 const Home = () => {
   return (
     <div>
