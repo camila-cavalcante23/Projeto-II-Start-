@@ -10,7 +10,7 @@ const App = () => {
         <label style={{ color: 'white' }}>Bem Vindo</label>
         <img className='img_logo' src="src/assets/StartUFC-logo-verde.png" alt="Logo" />
         <label style={{ color: 'white' }}>Não tem conta na Start?</label>
-        <button className='button_btn_register'>Cadastre-se</button>
+        <a href="/register" className='button_btn_register'>Cadastra-se</a>
         <div></div>
       </div>
       <div className="login_info">
