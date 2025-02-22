@@ -4,6 +4,7 @@ import Image from '../../assets/StartUFC-logo-simples.png'
 import Logo from '../../assets/StartUFC-logo.png'
 import Button from '../Button/Button'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isDisabled, setIsDisabled] = useState(false);
@@ -27,8 +28,8 @@ const Header = () => {
           <img src={ Image } alt="" className='header-img'/>
           
         </div>
-    
-        <Button className='button-register' text="Cadastre-se agora" onClick={handleClick} color="green" />
+        <Link to="/register"><Button text="Cadastre-se agora" color="green" /></Link>
+      
 
       </div>
     </header>
