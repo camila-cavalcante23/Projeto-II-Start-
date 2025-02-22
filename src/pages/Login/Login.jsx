@@ -1,5 +1,5 @@
 import React from 'react';
-import './login.css'; // Importe o arquivo CSS
+import './Login.css'; // Importe o arquivo CSS
 
 const App = () => {
   return (

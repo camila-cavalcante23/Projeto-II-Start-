@@ -24,7 +24,7 @@ const Info = () => {
         </div>
        
         <div className="box box5">
-          <Link to="/" className="grid-text">Eventos</Link>
+          <Link to="/eventos" className="grid-text">Eventos</Link>
          <SlArrowRightCircle />
         </div>
 
