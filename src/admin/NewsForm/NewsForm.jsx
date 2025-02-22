@@ -7,75 +7,107 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 function NewsForm() {
-  const [titulo, setTitulo] = useState('');
-  const [conteudo, setConteudo] = useState('');
-  const [imagem, setImagem] = useState(null);
+  
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    alert('Botão clicado!');
-  }
+  const [formData, setFormData] = useState({
+    titulo: '',
+    conteudo: '',
+    imagem: '',
+    dataCriacao: new Date().toISOString().split('T')[0],
+  });
 
-  const enviarNoticia = async (e) => {
-    e.preventDefault();
+  const [image, setImage] = useState(null);
+  const [preview, setPreview] = useState(null);
+  const [message, setMessage] = useState(null);
+  const [error, setError] = useState(null);
 
-    const formData = new FormData();
-    formData.append('titulo', titulo);
-    formData.append('conteudo', conteudo);
-    if (imagem) formData.append('imagem', imagem);
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-    try {
-      const resposta = await axios.post('http://localhost:5000/api/news', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      });
-
-      alert('Notícia criada com sucesso!');
-
-      const noticiaId = resposta.data.id;
-      navigate(`/noticia/${noticiaId}`);
-
-    } catch (error) {
-      console.error('Erro ao criar a notícia', error);
-      alert('Erro ao criar a notícia');
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImage(file);
+      setPreview(URL.createObjectURL(file));
     }
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!formData.titulo || !formData.conteudo || !image) {
+      setError('Todos os campos são obrigatórios.');
+      return;
+    }
+
+    const formDataToSend = new FormData();
+    formDataToSend.append('titulo', formData.titulo);
+    formDataToSend.append('conteudo', formData.conteudo);
+    formDataToSend.append('dataCriacao', formData.dataCriacao);
+    formDataToSend.append('imagem', image);
+
+    try {
+      const response = await axios.post('http://localhost:5000/api/news', formDataToSend, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      });
+
+      setMessage('Notícia criada com sucesso!');
+      setError(null);
+
+      setTimeout(() => {
+        navigate('/noticias'); 
+      }, 1500);
+    } catch (err) {
+      setError('Erro ao criar notícia. Tente novamente.');
+      setMessage(null);
+    }
+
+  };
+
   return (
-    <div className='news-form'>
+    <section className='news-form'>
       <Navbar2/>
-      <div className='news-form-content'>
-        <h2>Criar Notícia</h2>
-        <form onSubmit={enviarNoticia}>
-          <div className='input-title'>
-            <input
-              type="text"
-              value={titulo}
-              onChange={(e) => setTitulo(e.target.value)}
-              required
-              placeholder="Título da notícia"
-            />
-          </div>
-          <div className='textarea-content'>
-            <textarea
-              value={conteudo}
-              onChange={(e) => setConteudo(e.target.value)}
-              required
-              placeholder="Conteúdo da notícia"
-            />
-          </div>
-          <div className='uploud-img'>
-            <IoImagesOutline />
-            <label className='add-img'>Imagem:</label>
-            <input
-              type="file"
-              accept="image/*"
-              onChange={(e) => setImagem(e.target.files[0])}
-            />
-          </div>
-          <Button text="Criar Notícia" type="submit" />
+        <div className='news-form-content'>
+          <h2>Criar Notícia</h2>
+          
+          {message && <p className="success">{message}</p>}
+          {error && <p className="error">{error}</p>}
+          
+          <form className="form-group" onSubmit={handleSubmit}>
+            <div className="input-title">
+              <label>Título:</label>
+              <input type="text" name="titulo" value={formData.titulo} onChange={handleChange} required />
+            </div>
+
+            <div className="textarea-content">
+              <label>Conteúdo:</label>
+              <textarea name="conteudo" value={formData.conteudo} onChange={handleChange} required />
+            </div>
+
+            <div className="uploud-img">
+              <IoImagesOutline />
+              <label>Imagem:</label>
+              <input type="file" accept="image/*" onChange={handleImageChange} required />
+            </div>
+            {preview && (
+              <div className="image-preview">
+                <p>Pré-visualização:</p>
+                <img src={preview} alt="Pré-visualização" />
+              </div>
+            )}
+
+            <div className="creation-date">
+              <label>Data de Criação:</label>
+              <input type="date" name="dataCriacao" value={formData.dataCriacao} onChange={handleChange} required />
+            </div>
+
+            <Button text="Criar Notícia" type="submit" />
+
         </form>
       </div>
-    </div>
+    </section>
   );
 }
 
