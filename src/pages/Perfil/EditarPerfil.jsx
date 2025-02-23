@@ -42,6 +42,7 @@ const EditarPerfil = () => {
         <input type="text" name="cpf" value={user.cpf} onChange={handleChange} placeholder="CPF" required />
         <input type="text" name="telefone" value={user.telefone} onChange={handleChange} placeholder="Telefone" required />
         <input type="text" name="foto" value={user.foto} onChange={handleChange} placeholder="URL da Foto" />
+        <input type="text" name="senha" value={user.foto} onChange={handleChange} placeholder="Senha" />
         <button type="submit">Salvar Alterações</button>
       </form>
     </div>

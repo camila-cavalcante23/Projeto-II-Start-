@@ -16,6 +16,8 @@ import DetalhesEvento from "./pages/Eventos/DetalhesEvento.jsx";
 import Inscricao from './admin/inscricaoEvento/inscricao.jsx';
 import NewsDetail from './pages/NewsDetail/NewsDetail.jsx'
 import Register from './pages/Register/Register.jsx'
+import Perfil from './pages/Perfil/Perfil.jsx'
+import EditarPerfil from './pages/Perfil/EditarPerfil.jsx'
 
 const router = createBrowserRouter([
   {
@@ -38,6 +40,17 @@ const router = createBrowserRouter([
         path: "germinar-page",
         element: <GerminarPage />
       },
+
+      {
+        path: "perfil",
+        element: <Perfil/>,
+      },
+    
+      {
+        path: "editar-perfil",
+        element: <EditarPerfil/>,
+      },
+
       
       {
         path: "apoiadores",

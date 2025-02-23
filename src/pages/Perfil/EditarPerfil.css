@@ -73,7 +73,7 @@
    .logo{
     position: absolute;
     width: 8%;
-    left: 45%;
+    left: 47%;
     top: 5px;
    }
    .titulo{
@@ -83,3 +83,23 @@
       font-size: 20px;
       left: 44%;
    }
+
+    /* Para telas menores que 1024px */
+ @media (max-width: 1024px) {
+  
+}
+
+/* Para telas menores que 480px */
+@media (max-width: 480px) {
+
+  .titulo {
+      font-size: 16px;
+      left: 35%;
+  }
+
+  .logo {
+      width: 20%;
+      left: 43%;
+      top: 10px;
+  }
+}

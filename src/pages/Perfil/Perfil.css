@@ -1,6 +1,5 @@
 
 .perfil-container {
-
     width: 510px;
     height: 550px;
     background-color: #002A3A;
@@ -89,17 +88,20 @@
 }
 
 button.edit1 {
+     top: 70px;
     left: 50px;
 }
 
 button.exclu {
+  top: 70px;
     left: 240px;
 }
 
 button.sair{
-   left: 157px;
+   left: 147px;
    top: 95PX;
 }
+
   .perfil-container p strong {
     margin-right: 10px; /* Ajuste o valor conforme necessário */
     display: inline-block; /* Garante que o espaçamento seja aplicado corretamente */
@@ -128,7 +130,7 @@ button.sair{
  }
  .logo{
   position: absolute;
-  width: 8%;
+  width: 900%;
   left: 45%;
   top: 5px;
  }
@@ -261,17 +263,19 @@ button.sair{
 /* Para telas menores que 480px */
 @media (max-width: 480px) {
   .perfil-container {
-      width: 93%;
+      width: 95%;
       border-radius: 20px;
       padding: 1px;
+      height: 460px;
       top: 10px;
     
   }
 
   .perfil-container p {
       top: 30px;
-      padding: 1px;
+   font-size: 15px;
       left: -20px;
+      
     }
 
     .config{
@@ -295,11 +299,6 @@ button.sair{
       left: 76%;
   }
 
-  .logo {
-      width: 20%;
-      left: 44%;
-      top: 100px;
-  }
 
   button.edit1, button.exclu {
       font-size: 14px;
@@ -307,10 +306,11 @@ button.sair{
   }
   button.edit1{
     left: -80px;
+    top: 109px;
   }
 
   button.exclu{
-    top: 15px;
+    top: 80px;
     left: 90px;
   }
 }
