@@ -15,19 +15,19 @@ const Inscricao = () => {
 
             <div className="container1">
         
-            <div className="formContainer">
-                <h2 className="formTitle">Inscreva-se</h2>
-                <form>
-                    <label>Nome Completo:</label>
-                    <input type="text" placeholder="Digite seu nome" required />
+            <div className="formContainer1">
+                <h2 className="formTitle1">Inscreva-se</h2>
+                <form className='formulario'>
+                    <label className='lab'>Nome Completo: </label>
+                    <input className='coisa' type="text" placeholder="Digite seu nome" required />
 
-                    <label>CPF:</label>
-                    <input type="text" placeholder="Digite seu CPF" required />
+                    <label className='lab'>CPF:</label>
+                    <input className='coisa' type="text" placeholder="Digite seu CPF" required />
 
-                    <label>Telefone:</label>
-                    <input type="text" placeholder="Ex: (88) 99657 - 5242" required />
+                    <label className='lab'>Telefone:</label>
+                    <input className='coisa' type="text" placeholder="Ex: (88) 99657 - 5242" required />
 
-                    <button type="submit" className="confirmButton">Confirmar</button>
+                    <button  type="submit" className="confirmButton">Confirmar</button>
                 </form>
             </div>
         </div>

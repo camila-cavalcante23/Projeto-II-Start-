@@ -19,17 +19,17 @@
     cursor: pointer;
 }
 
-.formContainer {
+.formContainer1 {
     background: #32cd32;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 400px;
-    max-width: 100%; /* Garante que o formulário não ultrapasse a tela */
+    max-width: 100%; 
 }
 
-.formTitle {
+.formTitle1 {
     background: #002b36;
     color: #ffffff;
     padding: 10px;
@@ -39,13 +39,13 @@
     margin-bottom: 15px;
 }
 
-label {
+.lab {
     display: block;
     text-align: left;
     margin: 10px 0 5px;
 }
 
-input {
+.coisa {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
@@ -87,7 +87,7 @@ input {
         left: 15px;
     }
 
-    input {
+    .coisa {
         margin-bottom: 30px;
     }
 }
