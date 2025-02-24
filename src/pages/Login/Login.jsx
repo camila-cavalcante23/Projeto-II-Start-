@@ -1,34 +1,35 @@
 import React from 'react';
-import './Login.css'; // Importe o arquivo CSS
+import './login.css'; // Importe o arquivo CSS
 
-const App = () => {
+const login = () => {
   return (
-    <div className="container">
-      <div className="side_bar">
+    <div className="container-login">
+      <div className="side-bar-login">
         <div></div>
         <div></div>
-        <label style={{ color: 'white' }}>Bem Vindo</label>
-        <img className='img_logo' src="src/assets/StartUFC-logo-verde.png" alt="Logo" />
-        <label style={{ color: 'white' }}>Não tem conta na Start?</label>
+        <p style={{ color: 'white' }}>Bem Vindo</p>
+        <img className='img-logo' src="src/assets/StartUFC-logo-verde.png" alt="Logo" />
+        <a style={{ color: 'white' }}>Não tem conta na Start?</a>
         <a href="/register" className='button_btn_register'>Cadastra-se</a>
         <div></div>
       </div>
-      <div className="login_info">
-        <h1 className='titlelog' style={{ textAlign: 'center' }}>Faça Login</h1>
-        <label className='email'>Email:</label>
-        <input type="email" placeholder="Ex: antonio@gmail.com" tabIndex="1" />
-        <br />
-        <label className='senha'>Senha:</label>
-        <input type="password" tabIndex="2" />
-        <br />
-        <a tabIndex="4" href="URL" className="esqueceu_senha">
-          Esqueceu a senha?
-        </a>
-        <br />
-        <button className='button_enter' tabIndex="3">Entrar</button>
+      <div className="login-info">
+        <h1 className="login-title">Faça Login</h1>
+        <form> {/* Adicione o formulário */}
+          <label htmlFor="email" className="login-email-label">Email:</label>
+          <input type="email" className="login-email-input" placeholder="Ex: antonio@gmail.com" tabIndex="1" required />
+          <br />
+          <label htmlFor="password" className="login-password-label">Senha:</label>
+          <input type="password" className="login-password-input" tabIndex="2" required />
+          <br />
+          <a tabIndex="4" href="URL" className="reset-password">Esqueceu a senha?</a>
+          <br />
+          <button type="submit" className="button-enter" tabIndex="3">Entrar</button> {/* Botão de submit */}
+        </form>
       </div>
     </div>
   );
 };
 
-export default App;
+export default login;
+

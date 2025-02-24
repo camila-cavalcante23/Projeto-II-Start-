@@ -1,44 +1,47 @@
 import React from 'react';
-import { Link } from "react-router-dom"
-import './register.css'; // Importe o arquivo CSS
+import './register.css';
 
 const register = () => {
   return (
-    <div className="container_register">
-      <div className="side_bar_register">
+    <div className="container-register">
+      <div className="side-bar-register">
         <div></div>
         <div></div>
-        <label id='ti1' style={{ color: 'white' }}>Bem Vindo</label>
-        <img className='img_logo' src="src/assets/StartUFC-logo-verde.png" alt="Logo" />
-        <label style={{ color: 'white' }}>Ja tem conta na Start?</label>
-        <a href="/login" className='button_btn_login'>Logar</a>
+        <p id='ti1' style={{ color: 'white' }}>Bem Vindo</p>
+        <img className='img-logo' src="src/assets/StartUFC-logo-verde.png" alt="Logo" />
+        <p style={{ color: 'white' }}>Ja tem conta na Start?</p>
+        <a href="/login" className='button-btn-login'>Logar</a>
         
         <div></div>
       </div>
-      <div className="register_info">
-        <h1 className='title' style={{ textAlign: 'center' }}>Crie sua conta</h1>
-        <label className='email'>Nome Completo:</label>
-        <input type="email" tabIndex="1" />
-        <br />
-        <label className='email'>CPF:</label>
-        <input type="email" tabIndex="1" />
-        <br />
-        <label className='email'>Email:</label>
-        <input type="email" placeholder="Ex: antonio@gmail.com"  tabIndex="1" />
-        <br />
-        <label className='email'>Telefone:</label>
-        <input type="email" placeholder="Ex: (88) 99657 - 5242" tabIndex="1" />
-        <br />
-        <label className='senha'>Senha:</label>
-        <input type="password" tabIndex="2" />
-        <br />
-        <button className='button_create_account' tabIndex="3">Criar Conta</button>
-        <div className="button_group"> {/* Container para os botões */}
-          <button className='button_user' tabIndex="3">Usuário Padrão</button>
-          <button className='button_administrator' tabIndex="4">Administrador</button> {/* Novo botão */}
+      <div className="register-info">
+        <h1 className="register-title">Crie sua conta</h1>
+        <form>
+          <label htmlFor="full-name" className="register-full-name-label">Nome Completo:</label> {/* htmlFor para acessibilidade */}
+          <input type="text" className="register-full-name-input" tabIndex="1" required /> {/* Tipo "text" e "required" */}
+          <br />
+
+          <label htmlFor="tax-number" className="register-tax-number-label">CPF:</label>
+          <input type="text" className="register-tax-number-input" tabIndex="1" required /> {/* Tipo "text" e "required" */}
+          <br />
+
+          <label htmlFor="email" className="register-email-label">Email:</label>
+          <input type="email" className="register-email-input" placeholder="Ex: antonio@gmail.com" tabIndex="1" required /> {/* Tipo "email" e "required" */}
+          <br />
+
+          <label htmlFor="phone" className="register-phone-label">Telefone:</label>
+          <input type="tel" className="register-phone-input" placeholder="Ex: (88) 99657 - 5242" tabIndex="1" required /> {/* Tipo "tel" e "required" */}
+          <br />
+
+          <label htmlFor="password" className="register-password-label">Senha:</label>
+          <input type="password" className="register-password-input" tabIndex="2" required /> {/* Tipo "password" e "required" */}
+          <br />
+
+          <button type="submit" className="create-account-button" tabIndex="3">Criar Conta</button> {/* Botão de submit */}
+        </form>
         </div>
       </div>
-    </div>
+  
   );
 };
 
