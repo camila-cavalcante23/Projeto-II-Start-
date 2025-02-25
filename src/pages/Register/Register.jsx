@@ -1,8 +1,12 @@
 import React from 'react';
 import './register.css';
+import Navbar2 from '../../components/Navbar2/Navbar2';
 
 const register = () => {
   return (
+    <div>
+
+      <Navbar2/>
     <div className="container-register">
       <div className="side-bar-register">
         <div></div>
@@ -41,7 +45,7 @@ const register = () => {
         </form>
         </div>
       </div>
-  
+      </div>
   );
 };
 

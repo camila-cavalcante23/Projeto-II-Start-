@@ -1,10 +1,19 @@
 import React from 'react';
 import './login.css'; // Importe o arquivo CSS
+import Navbar2 from "../../components/Navbar2/Navbar2";
 
 const login = () => {
   return (
+
+    <div>
+      
+      <Navbar2/>
+    
     <div className="container-login">
+      
       <div className="side-bar-login">
+        
+      
         <div></div>
         <div></div>
         <p style={{ color: 'white' }}>Bem Vindo</p>
@@ -27,7 +36,11 @@ const login = () => {
           <button type="submit" className="button-enter" tabIndex="3">Entrar</button> {/* Botão de submit */}
         </form>
       </div>
+
+  
     </div>
+    </div>
+
   );
 };
 
