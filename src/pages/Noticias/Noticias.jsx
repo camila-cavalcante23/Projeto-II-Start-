@@ -15,7 +15,7 @@ function Noticias() {
   const [allNews, setAllNews] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/news')
+    axios.get('http://localhost:44367/api/news')
       .then((response) => {
         setAllNews(response.data);
         setLoading(false);  

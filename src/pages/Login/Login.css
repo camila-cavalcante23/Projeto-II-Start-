@@ -67,8 +67,7 @@
   text-align: center;
   margin: 10px auto;
   align-self: flex-end;
-  display: grid
-;
+  display: grid;
 }
 
 .side-bar-login .img-logo {
@@ -76,7 +75,6 @@
   margin: 0 auto;
 }
 
-/* Inputs */
 .login-info .login-email-label, 
 .login-info .login-password-label {
   font-size: 1rem;
@@ -103,8 +101,15 @@
   margin-top: 1rem;
 }
 
-/* Responsividade para telas menores */
-/* Responsividade para telas menores */
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 @media (max-width: 768px) {
   .container-login {
     flex-direction: column;
