@@ -23,7 +23,7 @@ namespace Crud_Usuario.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post(NewsDTO newsDTO) 
+        public async Task<ActionResult> Post(NewsDTO newsDTO)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
@@ -31,7 +31,7 @@ namespace Crud_Usuario.Controllers
 
             var imageConverter = await converter.Converte(newsDTO.Image);
 
-            if(imageConverter is null) return BadRequest("Error while converter");
+            if (imageConverter is null) return BadRequest("Error while converter");
 
             var image = await _imageRepository.Post(imageConverter);
 
@@ -40,7 +40,13 @@ namespace Crud_Usuario.Controllers
 
             var result = await _repository.Create(newNews);
 
-            return result ? Ok(result) : BadRequest();
+            if (result)
+            {
+                var createdNews = await _repository.GetById(newNews.Id);
+                return CreatedAtAction(nameof(GetById), new { id = createdNews.Id }, createdNews);
+            }
+
+            return BadRequest("Erro ao criar notícia");
         }
         [HttpGet("{id:int}")]
         public async Task<ActionResult<News>> GetById(int id)
@@ -54,8 +60,15 @@ namespace Crud_Usuario.Controllers
         public async Task<ActionResult<List<News>>> GetAll()
         {
             var news = await _repository.GetAll();
-            
-            return news is not null ? Ok(news) : BadRequest("internal error or no news in database");
+
+            if (news is null || !news.Any())
+                return BadRequest("internal error or no news in database");
+
+            var orderedNews = news.OrderByDescending(n => n.CreatedAt).ToList();
+
+            return Ok(orderedNews);
+
+            //return news is not null ? Ok(news) : BadRequest("internal error or no news in database");
         }
 
         [HttpPut("{id:int}")]

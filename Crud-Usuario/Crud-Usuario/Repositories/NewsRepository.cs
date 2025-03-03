@@ -37,9 +37,9 @@ namespace Crud_Usuario.Repositories
 
         public async Task<List<News>?> GetAll()
         {
-            var news = await _context.News.ToListAsync();
-            if (news is null) return null;
-            return news;
+            return await _context.News
+            .OrderByDescending(n => n.CreatedAt)
+            .ToListAsync();
         }
 
         public async Task<News?> GetById(int id)
