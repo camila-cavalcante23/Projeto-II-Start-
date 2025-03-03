@@ -1,28 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import './Noticias.css'
+import './Noticias.css';
 import Navbar2 from '../../components/Navbar2/Navbar2';
 import Footer from '../../components/Footer/Footer';
 import Button from "../../components/Button/Button";
 
 function Noticias() {
-
-  const [currentPage, setCurrentPage] = useState(1);  
+  const [currentPage, setCurrentPage] = useState(1);
   const [newsPerPage] = useState(10);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [allNews, setAllNews] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:44367/api/news')
+    axios.get('https://localhost:44367/api/news')
       .then((response) => {
         setAllNews(response.data);
-        setLoading(false);  
+        setLoading(false);
       })
       .catch((error) => {
         console.error('Erro ao buscar notícias', error);
-        setLoading(false); 
+        setLoading(false);
       });
   }, []);
 
@@ -42,17 +41,22 @@ function Noticias() {
 
   return (
     <section className='allNews'>
-      <Navbar2/>
+      <Navbar2 />
       <div className="allNews-container">
         <h1 className='title-allNews'>Todas as Notícias</h1>
         <ul className='allNews-list'>
           {currentNews.map((news) => (
             <li key={news.id}>
-              <Link to={`/noticia/${news.id}`}>
-                <h3>{news.titulo}</h3>
-                <p className="meta">{new Date(news.dataCriacao).toLocaleDateString()}</p>
-                <p>{news.conteudo.substring(0, 300)}...</p> 
-              </Link> 
+              <Link to={`/news-detail/${news.id}`}>
+                <img 
+                  src={`https://localhost:44367/api/images/${news.imgId}`}
+                  alt={news.title} 
+                  className="news-image" 
+                />
+                <h3>{news.title}</h3>
+                <p>Criado em: {new Date(news.createdAt).toLocaleDateString()}</p>
+                <p>{news.text ? `${news.text.substring(0, 100)}...` : 'Conteúdo não disponível'}</p>
+              </Link>
             </li>
           ))}
         </ul>
@@ -60,15 +64,14 @@ function Noticias() {
           {currentPage > 1 && (
             <Button text="Página Anterior" color="green" onClick={() => paginate(currentPage - 1)} />
           )}
-
           {currentNews.length === newsPerPage && (
             <Button text="Próxima Página" color="green" onClick={() => paginate(currentPage + 1)} />
           )}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </section>
   );
-};
+}
 
-export default Noticias
+export default Noticias;

@@ -7,13 +7,14 @@ import { FaTimes, FaUser, FaSignOutAlt, FaChevronDown } from 'react-icons/fa'
 import Button from '../../components/Button/Button'
 import { Link as ScrollLink} from 'react-scroll'
 import axios from 'axios';  
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
 
 const [isOpen, setIsOpen] = useState(false) 
 const [user, setUser] = useState(null);
 const [menuOpen, setMenuOpen] = useState(false);
-
+const navigate = useNavigate(); 
 
 useEffect(() => {
     const userId = localStorage.getItem('userId');
@@ -26,7 +27,6 @@ useEffect(() => {
           console.log('User data loaded:', response.data);
         })
 
-        
         .catch(error => {
           console.error('Erro ao pegar dados do usuário', error);
         });
@@ -36,8 +36,8 @@ useEffect(() => {
   const toggleMenu = () => setIsOpen(!isOpen)
 
   const handleLogout = () => {
-    localStorage.removeItem('userId');
-    setUser(null);
+    localStorage.clear();
+    navigate("/login");
   };
 
   return (

@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         element: <QuemSomos/>,
       },
       {
-        path: "noticias",
+        path: "news",
         element: <Noticias/>,
       },
       {
@@ -50,8 +50,6 @@ const router = createBrowserRouter([
         path: "editar-perfil",
         element: <EditarPerfil/>,
       },
-
-      
       {
         path: "apoiadores",
         element: <Apoiadores/>,
@@ -86,7 +84,7 @@ const router = createBrowserRouter([
         element: <Inscricao/>
       },
       {
-        path: "noticia/:id",
+        path: "news-detail/:id",
         element: <NewsDetail/>
       },
       { 

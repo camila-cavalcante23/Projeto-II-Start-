@@ -128,7 +128,7 @@ const Register = () => {
             <input
               type="file"
               className="register-image-input"
-              onChange={(e) => setImage(e.target.files[0])} // Set the image file to state
+              onChange={(e) => setImage(e.target.files[0])}
             />
             <br />
 

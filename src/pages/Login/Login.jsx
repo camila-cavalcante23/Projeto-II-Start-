@@ -3,7 +3,6 @@ import './login.css'; // Importe o arquivo CSS
 import Navbar2 from "../../components/Navbar2/Navbar2";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import { FaSpinner } from 'react-icons/fa';
 
 const Login = () => {
 

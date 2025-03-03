@@ -1,114 +1,102 @@
-import React, { useState } from 'react';
-import './NewsForm.css'
+import React, { useState, useEffect } from 'react';
+import './NewsForm.css';
 import Navbar2 from '../../components/Navbar2/Navbar2';
-import { IoImagesOutline } from "react-icons/io5";
-import Button from '../../components/Button/Button'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
-function NewsForm() {
+const NewsForm = () => {
+  const [title, setTitle] = useState('');
+  const [text, setText] = useState('');
+  const [image, setImage] = useState(null);
+  const [createdAt, setCreatedAt] = useState('');
+  const [isEditing, setIsEditing] = useState(false);
   
   const navigate = useNavigate();
+  const { id } = useParams();
 
-  const [formData, setFormData] = useState({
-    titulo: '',
-    conteudo: '',
-    imagem: '',
-    dataCriacao: new Date().toISOString().split('T')[0],
-  });
-
-  const [image, setImage] = useState(null);
-  const [preview, setPreview] = useState(null);
-  const [message, setMessage] = useState(null);
-  const [error, setError] = useState(null);
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setImage(file);
-      setPreview(URL.createObjectURL(file));
+  useEffect(() => {
+    if (id) {
+      // Se estiver editando, buscar os dados da notícia pelo ID
+      axios.get(`https://localhost:44367/api/news/${id}`)
+        .then(response => {
+          const news = response.data;
+          setTitle(news.title);
+          setText(news.text);
+          setCreatedAt(news.createdAt); // Não editar essa data
+        })
+        .catch(error => {
+          console.error('Erro ao carregar notícia', error);
+        });
     }
-  };
+  }, [id]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!formData.titulo || !formData.conteudo || !image) {
-      setError('Todos os campos são obrigatórios.');
-      return;
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('text', text);
+    if (image) {
+      formData.append('image', image);
     }
 
-    const formDataToSend = new FormData();
-    formDataToSend.append('titulo', formData.titulo);
-    formDataToSend.append('conteudo', formData.conteudo);
-    formDataToSend.append('dataCriacao', formData.dataCriacao);
-    formDataToSend.append('imagem', image);
+    const url = isEditing
+      ? `https://localhost:44367/api/news/${id}`
+      : 'https://localhost:44367/api/news';
 
-    try {
-      const response = await axios.post('http://localhost:5000/api/news', formDataToSend, {
-        headers: { 'Content-Type': 'multipart/form-data' }
+    const method = isEditing ? 'put' : 'post';
+
+    axios({
+      method,
+      url,
+      data: formData,
+    })
+      .then(response => {
+        navigate('/news'); // Redireciona após a criação/edição
+      })
+      .catch(error => {
+        console.error('Erro ao enviar formulário', error);
       });
-
-      setMessage('Notícia criada com sucesso!');
-      setError(null);
-
-      setTimeout(() => {
-        navigate('/noticias'); 
-      }, 1500);
-    } catch (err) {
-      setError('Erro ao criar notícia. Tente novamente.');
-      setMessage(null);
-    }
-
   };
 
   return (
-    <section className='news-form'>
-      <Navbar2/>
-        <div className='news-form-content'>
-          <h2>Criar Notícia</h2>
-          
-          {message && <p className="success">{message}</p>}
-          {error && <p className="error">{error}</p>}
-          
-          <form className="form-group" onSubmit={handleSubmit}>
-            <div className="input-title">
-              <label>Título:</label>
-              <input type="text" name="titulo" value={formData.titulo} onChange={handleChange} required />
-            </div>
+    <div className='.news-form'>
+      <Navbar2 />
+      <div className="container-news-form">
+        <h1 className="news-title">{isEditing ? 'Editar Notícia' : 'Criar Notícia'}</h1>
 
-            <div className="textarea-content">
-              <label>Conteúdo:</label>
-              <textarea name="conteudo" value={formData.conteudo} onChange={handleChange} required />
-            </div>
+        <form onSubmit={handleSubmit} className='form-group'>
+          <label>Título:</label>
+          <input className='input-title'
+            type="text" 
+            value={title} 
+            onChange={(e) => setTitle(e.target.value)} 
+            required 
+          />
 
-            <div className="uploud-img">
-              <IoImagesOutline />
-              <label>Imagem:</label>
-              <input type="file" accept="image/*" onChange={handleImageChange} required />
-            </div>
-            {preview && (
-              <div className="image-preview">
-                <p>Pré-visualização:</p>
-                <img src={preview} alt="Pré-visualização" />
-              </div>
-            )}
+          <label>Conteúdo:</label>
+          <textarea className='textarea-content'
+            value={text} 
+            onChange={(e) => setText(e.target.value)} 
+            required 
+          />
 
-            <div className="creation-date">
-              <label>Data de Criação:</label>
-              <input type="date" name="dataCriacao" value={formData.dataCriacao} onChange={handleChange} required />
-            </div>
+          <label>Imagem:</label>
+          <input 
+            type="file" 
+            accept="image/*" 
+            onChange={(e) => setImage(e.target.files[0])} 
+            required 
+          />
 
-            <Button text="Criar Notícia" type="submit" />
-
+          <button 
+            className="create-news-button"
+            type="submit"> {isEditing ? 'Atualizar Notícia' : 'Criar Notícia'}
+          </button>
         </form>
       </div>
-    </section>
+    </div>
   );
-}
+};
 
 export default NewsForm;

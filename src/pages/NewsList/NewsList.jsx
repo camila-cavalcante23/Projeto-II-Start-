@@ -1,31 +1,26 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './NewsList.css';
-import Button from '../../components/Button/Button'
+import Button from '../../components/Button/Button';
 
 const NewsList = () => {
-
   const navigate = useNavigate();
-
-  const [newsList, setNewsList] = useState([]); 
-  const [loading, setLoading] = useState(true);  
-
+  const [newsList, setNewsList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    
-    axios.get('http://localhost:5000/api/news')
+    axios.get('https://localhost:44367/api/news')
       .then(response => {
-        setNewsList(response.data); 
-        setLoading(false);  
+        setNewsList(response.data);
+        setLoading(false);
       })
       .catch(error => {
         console.error('Erro ao carregar as notícias', error);
-        setLoading(false);  
+        setLoading(false);
       });
   }, []);
-  
+
   return (
     <section id='news-id'>
       <div className="news-list">
@@ -40,17 +35,21 @@ const NewsList = () => {
             <ul className='list-content'>
               {newsList.slice(0, 4).map((news) => (
                 <li key={news.id}>
-                  <Link to={`/noticia/${news.id}`}>
-                    <img src={news.imagem} alt={news.titulo} className="news-image" />
-                    <h3>{news.titulo}</h3>
-                    <p className="meta">{new Date(news.dataCriacao).toLocaleDateString()}</p>
-                    <p>{news.conteudo.substring(0, 200)}...</p> 
-                  </Link> 
+                  <Link to={`/news-detail/${news.id}`}>
+                    <img 
+                      src={`https://localhost:44367/api/images/${news.imgId}`}
+                      alt={news.title} 
+                      className="news-image" 
+                    />
+                    <h3>{news.title}</h3>
+                    <p>{news.text ? `${news.text.substring(0, 200)}...` : 'Conteúdo não disponível'}</p>
+                    <p className="created-at">Criado em: {new Date(news.createdAt).toLocaleDateString()}</p>
+                  </Link>
                 </li>
               ))}
             </ul>
             <div className='btn-right'>
-              <Button text="Mais notícias" color="green" onClick={() => navigate('/noticias')} />
+              <Button text="Mais notícias" color="green" onClick={() => navigate('/news')} />
             </div>
           </>
         )}
@@ -60,4 +59,3 @@ const NewsList = () => {
 };
 
 export default NewsList;
-
