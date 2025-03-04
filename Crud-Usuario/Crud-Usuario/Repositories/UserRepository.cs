@@ -2,10 +2,12 @@
 using Crud_Usuario.Context;
 using Crud_Usuario.DTOs;
 using Crud_Usuario.Entities;
+using Crud_Usuario.Enums;
 using Crud_Usuario.IRepositories;
 using Crud_Usuario.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Crud_Usuario.Repositories
 {
@@ -22,23 +24,39 @@ namespace Crud_Usuario.Repositories
         }
         public async Task<bool> CreateAccount(RegisterDTO register)
         {
-            var converter = new ConverteImage();
-
-            var imageConverted = await converter.Converte(register.image);
-
-            if (imageConverted is null) return false;
-
             var encripty = new PasswordHashEncripty();
             var user = _mapper.Map<User>(register);
-            
 
+            user.Role = register.Email == "admin@admin.com" ? Role.Admin : Role.User;
+
+            // Criptografia da senha
             user.Password = encripty.EncriptyPassword(user);
-            user.ImgId = imageConverted.Id;
 
-            await _imageRepository.Post(imageConverted);
-
+            // Adiciona o usuário ao banco de dados
             await _context.Users.AddAsync(user);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(); // Salva o usuário primeiro, sem a imagem
+
+            // Verifique se uma imagem foi fornecida
+            if (register.Image != null)
+            {
+                var converter = new ConverteImage();
+                var imageConverted = await converter.Converte(register.Image);
+
+                // Se a conversão falhar, retorna false
+                if (imageConverted == null)
+                    return false;
+
+                // Salve a imagem no repositório
+                await _imageRepository.Post(imageConverted);
+
+                // Atribui o Id da imagem ao usuário após salvar a imagem
+                user.ImgId = imageConverted.Id;
+
+                // Atualiza o usuário com a referência à imagem
+                _context.Users.Update(user);
+                await _context.SaveChangesAsync(); // Salva as alterações no usuário
+            }
+
             return true;
         }
 
@@ -103,7 +121,6 @@ namespace Crud_Usuario.Repositories
             
             return null;
         }
-
         public async Task<User?> LoginAsync(LoginDTO login)
         {
             var encripty = new PasswordHashEncripty();

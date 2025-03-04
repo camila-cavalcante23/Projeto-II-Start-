@@ -15,5 +15,13 @@ namespace Crud_Usuario.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>()
+                .Property(u => u.Role)
+                .HasConversion<string>();
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

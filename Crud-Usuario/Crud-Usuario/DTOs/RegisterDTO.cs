@@ -11,6 +11,6 @@ namespace Crud_Usuario.DTOs
         public string Password { get; set; } = string.Empty;
         public int Cellphone { get; set; } = 0;
         public string Cpf { get; set; } = string.Empty;
-        public IFormFile image {  get; set; }
+        public IFormFile? Image {  get; set; }
     }
 }

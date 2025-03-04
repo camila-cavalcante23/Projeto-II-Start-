@@ -1,4 +1,6 @@
-﻿namespace Crud_Usuario.Entities
+﻿using Crud_Usuario.Enums;
+
+namespace Crud_Usuario.Entities
 {
     public class User : EntityBase
     {
@@ -8,5 +10,6 @@
         public int Cellphone { get; set; } = 0;
         public string Cpf { get; set; } = string.Empty;
         public int ImgId {  get; set; }
+        public Role Role{ get; set; } = Role.User;
     }
 }
