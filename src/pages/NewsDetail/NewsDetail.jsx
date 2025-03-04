@@ -13,6 +13,8 @@ const NewsDetail = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const role = localStorage.getItem('role');
+
   useEffect(() => {
 
     axios.get(`https://localhost:44367/api/news/${id}`)
@@ -26,16 +28,38 @@ const NewsDetail = () => {
         setError("Erro ao carregar a notícia.");
         setLoading(false);
       });
-  }, [id]);  
+  }, [id]); 
+  
+  const handleDelete = () => {
+    if (window.confirm("Tem certeza que deseja deletar esta notícia?")) {
+      axios
+        .delete(`https://localhost:44367/api/news/${id}`)
+        .then(() => {
+          alert("Notícia deletada com sucesso!");
+          navigate("/news");
+        })
+        .catch((error) => {
+          console.error("Erro ao deletar a notícia:", error);
+          alert("Erro ao deletar a notícia.");
+        });
+    }
+  };
 
   if (loading) return <div>Carregando notícia...</div>;  
   if (error) return <div>{error}</div>;  
+
   return (
     <section className="details">
       <Navbar2 />
       <div className="news-detail">
         <h1>{news?.title}</h1> 
         <p className="created-at-news">Criado em: {new Date(news.createdAt).toLocaleDateString()}</p>
+        {role === "Admin" && (
+          <div className="buttons-edit-del">
+            <Button text="Editar" className="button-edit" color="blue" onClick={() => navigate(`/edit-news/${id}`)} />
+            <Button text="Deletar" className="button-delete" color="red" onClick={handleDelete} />
+          </div>
+        )}
         <div className="image-public">
             <img 
                 src={`https://localhost:44367/api/images/${news.imgId}`}
