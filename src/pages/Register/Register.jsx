@@ -9,7 +9,7 @@ const Register = () => {
   const [name, setName] = useState('');
   const [cpf, setCpf] = useState('');
   const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
+  const [cellphone, setCellphone] = useState('');
   const [password, setPassword] = useState('');
   const [image, setImage] = useState(null);
   const [error, setError] = useState('');
@@ -28,12 +28,14 @@ const Register = () => {
     formData.append('name', name);
     formData.append('cpf', cpf);
     formData.append('email', email);
-    formData.append('phone', phone);
+    formData.append('cellphone', cellphone);
     formData.append('password', password);
 
     if (image) {
       formData.append('image', image);
     }
+
+    console.log("enviando dados", formData);
 
     try {
       const response = await axios.post('https://localhost:44367/users/register', formData, {
@@ -107,8 +109,8 @@ const Register = () => {
             <input
               type="tel"
               className="register-phone-input"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              value={cellphone}
+              onChange={(e) => setCellphone(e.target.value)}
               placeholder="Ex: (88) 99657 - 5242"
               required
             />

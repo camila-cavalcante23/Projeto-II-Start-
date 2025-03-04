@@ -1,0 +1,59 @@
+.dashboard{
+    background-color: #fff;
+}
+.admin-dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+.admin-dashboard h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #001D3D;
+    font-family: "Gabarito", serif;
+}
+
+.admin-dashboard .group-dashboard{
+    padding: 100px;
+    height: 550px;
+    background-color: #38D430;
+    box-shadow: 12px 17px 19.2px rgba(0, 0, 0, 0.25);
+    border-radius: 91px;
+    position: relative;
+}
+
+.dashboard-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dashboard-buttons button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 20px;
+    font-family: "Open Sans", serif;
+}
+
+.dashboard-buttons .news-button {
+    background-color: #001D3D;
+    color: white;
+}
+
+.dashboard-buttons .event-button {
+    background-color: #001D3D;
+    color: white;
+}
+
+.dashboard-buttons .gallery-button {
+    background-color: #001D3D;
+    color: white;
+}
+ 

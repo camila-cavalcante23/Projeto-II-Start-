@@ -16,6 +16,11 @@
     background-color: #38D430;
     color: #000000;
   }
+
+  .btn.red {
+    background-color: #Ff0000;
+    color: #ffffff;
+  }
   
   .btn:disabled {
     background-color: #cccccc;

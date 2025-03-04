@@ -14,30 +14,30 @@ function Navbar() {
 const [isOpen, setIsOpen] = useState(false) 
 const [user, setUser] = useState(null);
 const [menuOpen, setMenuOpen] = useState(false);
+const [role, setRole] = useState();
 const navigate = useNavigate(); 
 
 useEffect(() => {
-    const userId = localStorage.getItem('userId');
-    console.log('userId recuperado do localStorage:', userId); 
-    
-    if (userId) {
-      axios.get(`https://localhost:44367/users/${userId}`)
-        .then(response => {
-          setUser(response.data);  
-          console.log('User data loaded:', response.data);
-        })
-
-        .catch(error => {
-          console.error('Erro ao pegar dados do usuário', error);
-        });
-    }
-  }, []);
+    const id = localStorage.getItem('id'); 
+    const role = localStorage.getItem('role');
+    if (id && role) {
+        setRole(role); 
+        axios.get(`https://localhost:44367/users/${id}`)
+          .then(response => {
+            setUser(response.data);
+          })
+          .catch(error => {
+            console.error("Erro ao pegar dados do usuário:", error.response?.data || error.message);
+          });
+      }
+    }, []);
 
   const toggleMenu = () => setIsOpen(!isOpen)
 
   const handleLogout = () => {
-    localStorage.clear();
-    navigate("/login");
+    localStorage.removeItem('id');
+    localStorage.removeItem('role');
+    navigate('/login');
   };
 
   return (
@@ -81,6 +81,9 @@ useEffect(() => {
                             {menuOpen && (
                                 <div className="dropdown-menu">
                                     <Link to="/perfil" className='profile-name'>Meu Perfil</Link>
+                                    {role === "Admin" && (
+                                    <Link to="/dashboard" className='dashboard-profile'>Dashboard</Link>
+                                )}
                                     <div className='btn-leave'>
                                         <button onClick={handleLogout} ><FaSignOutAlt /> Sair</button>
                                     </div>

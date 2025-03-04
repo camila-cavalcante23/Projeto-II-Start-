@@ -4,6 +4,7 @@ import Navbar2 from "../../components/Navbar2/Navbar2";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
+
 const Login = () => {
 
   const [email, setEmail] = useState('');
@@ -16,25 +17,27 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://localhost:44367/users/login', {
-        email: email,
-        password: password
-      }, {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
+        const response = await axios.post('https://localhost:44367/users/login', {
+            email: email,
+            password: password
+        }, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
 
-      if (response.status === 200) {
-        localStorage.setItem('userId', response.data.id); 
-        navigate("/"); 
-       
-      }
+        if (response.status === 200) {
+            localStorage.setItem('id', response.data.id);
+            localStorage.setItem('token', response.data.token);
+            localStorage.setItem('role', response.data.role);
+
+            navigate("/");
+        }
     } catch (error) {
-      setError(error.response?.data || "Erro ao fazer login");
-      setSuccess('');
+        setError(error.response?.data || "Erro ao fazer login");
+        setSuccess('');
     }
-  };
+};
 
   return (
     <div>

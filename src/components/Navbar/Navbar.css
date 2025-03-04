@@ -121,6 +121,11 @@ a {
     background: #f0f0f0;
 }
 
+.user-menu .dropdown-menu .dashboard-profile{
+    margin: 15px 0px;
+    font-size: 18px;
+}
+
 @media(max-width: 830px){
     .navbar{
         padding: 0 15px;

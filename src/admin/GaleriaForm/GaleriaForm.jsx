@@ -16,7 +16,7 @@ const GaleriaForm = () => {
         formData.append("imagem", imagem);
 
         try {
-            const resposta = await fetch("http://localhost:5000/api/galeria", {
+            const resposta = await fetch("https://localhost:44367/api/galeries", {
                 method: "POST",
                 body: formData,
             });

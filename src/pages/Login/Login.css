@@ -115,13 +115,13 @@
     flex-direction: column;
     width: 95%;
     height: auto;
-    min-height: 100vh; /* Garante que ocupa a tela inteira */
+    min-height: 100vh;
     padding: 0;
     border-radius: 0;
-    position: relative; /* Corrige o corte da sidebar */
+    position: relative;
     top: 0;
     left: 50%;
-    transform: translateX(-50%); /* Somente para centralizar horizontalmente */
+    transform: translateX(-50%);
   }
 
   .side-bar-login {

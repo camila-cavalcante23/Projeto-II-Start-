@@ -18,6 +18,7 @@ import NewsDetail from './pages/NewsDetail/NewsDetail.jsx'
 import Register from './pages/Register/Register.jsx'
 import Perfil from './pages/Perfil/Perfil.jsx'
 import EditarPerfil from './pages/Perfil/EditarPerfil.jsx'
+import Dashboard from './admin/Dashboard/Dashboard.jsx'
 
 const router = createBrowserRouter([
   {
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: "germinar-page",
-        element: <GerminarPage />
+        element: <GerminarPage />,
       },
 
       {
@@ -64,20 +65,19 @@ const router = createBrowserRouter([
       },
       {
         path: "news-form",
-        element: <NewsForm/>
+        element: <NewsForm/>,
       },
       {
         path: "login",
-        element: <Login/>
+        element: <Login/>,
       },
       {
         path: "eventos",
-        element: <Eventos/>
+        element: <Eventos/>,
       },
-
       {
         path: "detalhesevento", 
-        element: <DetalhesEvento/>
+        element: <DetalhesEvento/>,
       },
       {
         path: "inscricaoevento",
@@ -85,12 +85,16 @@ const router = createBrowserRouter([
       },
       {
         path: "news-detail/:id",
-        element: <NewsDetail/>
+        element: <NewsDetail/>,
       },
       { 
         path: "register",
-        element: <Register/>
-      }
+        element: <Register/>,
+      },
+      {
+        path: "dashboard",  
+        element: <Dashboard />,
+      },
     ]
   },
 ])
