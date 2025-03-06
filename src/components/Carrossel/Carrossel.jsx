@@ -6,7 +6,6 @@ const Carrossel = ({ imagens }) => {
 
     const nextImage = () => {
         setCurrentIndex((prevIndex) => {
-            // Incrementa o índice de 3 em 3 e faz o loop
             return (prevIndex + 3) % imagens.length;
         });
     };
@@ -17,19 +16,18 @@ const Carrossel = ({ imagens }) => {
         );
     };
 
-    // Pega as 3 imagens atuais com base no índice
     const currentImages = imagens.slice(currentIndex, currentIndex + 3);
 
     return (
-        <div className="carrossel-container">
+        <div className="carrossel-container1">
             <button className="prev" onClick={prevImage}>←</button>
-            <div className="carrossel-imagens">
-                {currentImages.map((img, index) => (
+            <div className="carrossel-imagens1">
+                {currentImages.map((id, index) => (
                     <img
                         key={index}
-                        src={img}
-                        alt={`Imagem ${currentIndex + index + 1}`}
-                        className="carrossel-imagem"
+                        src={`https://localhost:44367/api/images/${id}`} 
+                        alt={`Imagem ${id}`} 
+                        className="carrossel-imagem1"
                     />
                 ))}
             </div>

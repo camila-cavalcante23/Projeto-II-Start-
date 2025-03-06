@@ -16,13 +16,13 @@ const NewsForm = () => {
 
   useEffect(() => {
     if (id) {
-      // Se estiver editando, buscar os dados da notícia pelo ID
+     
       axios.get(`https://localhost:44367/api/news/${id}`)
         .then(response => {
           const news = response.data;
           setTitle(news.title);
           setText(news.text);
-          setCreatedAt(news.createdAt); // Não editar essa data
+          setCreatedAt(news.createdAt); 
         })
         .catch(error => {
           console.error('Erro ao carregar notícia', error);
@@ -42,7 +42,7 @@ const NewsForm = () => {
 
     const url = isEditing
       ? `https://localhost:44367/api/news/${id}`
-      : 'https://localhost:44367/api/news';
+      : `https://localhost:44367/api/news`;
 
     const method = isEditing ? 'put' : 'post';
 
@@ -52,7 +52,7 @@ const NewsForm = () => {
       data: formData,
     })
       .then(response => {
-        navigate('/news'); // Redireciona após a criação/edição
+        navigate('/news'); 
       })
       .catch(error => {
         console.error('Erro ao enviar formulário', error);

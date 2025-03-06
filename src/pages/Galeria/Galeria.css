@@ -1,28 +1,39 @@
-.carrossel-container {
-    width: 60%;
-    margin: 0 auto;
+.galeries-all{
+  margin: 0px auto;
+  padding: 10px 50px;
+  max-width: 100%;
+  width: 100vw;
+}
+.galeries-context{
+  margin-bottom: 30px;
+  font-family: "Gabarito", serif;
+  font-size: 2.5vw;
+  font-weight: bolder;
+}
+.add-image-container {
+    margin-top: 20px;
     text-align: center;
-  }
-  
-  .carrossel-container img {
-    width: 40%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  .carrossel-container button {
-    margin-top: 10px;
-    padding: 10px;
-    color: rgba(0, 42, 58, 1);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-  }
-  
-  .carrossel-container button:hover {
-    background-color: #0056b3;
-  }
+}
 
+.image-upload {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.add-image-container .add-image-btn {
+    padding: 10px 20px;
+    background-color: #38D430;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.add-image-btn:hover {
+    background-color: #45a049;
+}
 
   @media (max-width: 1024px) {
     .titulo-parceiros{
@@ -32,7 +43,6 @@
   
   }
   
-  /* Media query para telas menores que 768px (Celulares em modo paisagem e tablets pequenos) */
   @media (max-width: 768px) {
     .titulo-parceiros {
       font-size: 17px;
@@ -42,7 +52,6 @@
    
   }
   
-  /* Media query para telas menores que 480px (Celulares) */
   @media (max-width: 480px) {
     .titulo-parceiros{
       font-size: 17px;

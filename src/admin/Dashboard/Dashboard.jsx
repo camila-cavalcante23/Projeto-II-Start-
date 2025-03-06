@@ -19,7 +19,7 @@ const Dashboard = () => {
                     <button className="event-button" onClick={() => navigate('/admin/create-event')}>
                         Criar Evento
                     </button>
-                    <button className="gallery-button" color="green" onClick={() => navigate('/admin/add-gallery')}>
+                    <button className="gallery-button" color="green" onClick={() => navigate('/galeria')}>
                         Adicionar Fotos à Galeria
                     </button>
                 </div>
